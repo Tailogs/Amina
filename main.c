@@ -1,3 +1,4 @@
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,6 +17,11 @@
 #include "Bin/chat/server.h"
 #include "Bin/color/color.h"
 #include "Bin/stringFunc/stringFunc.h"
+#include "Bin/menu/menu.h"
+#include "Bin/simulatorCat/simulatorCat.h"
+#include "Bin/doomLite/doomLite.h"
+#include "Bin/spaceDown/spaceDown.h"
+#include "Bin/myFlappyBird/myFlappyBird.h"
 
 #define MAX_PATH_LEN 256
 #define MAX_COMMAND_LEN 1024 // Define MAX_COMMAND_LEN here
@@ -195,6 +201,16 @@ void RunCommand(char *command, char *currentDir) {
         printf("|        |-> Example: client 192.168.0.103 5555                                                               |\n");
         printf("|    portscanner <port>                                    Start a port scanner                               |\n");
         printf("|        |-> Example: portscanner 192.168.0.103 1 200                                                         |\n");
+        printf("+-------");
+        setColor("bright_magenta");
+        printf("<GAMES>");
+        setColor("bright_green");
+        printf("-----------------------------------------------------------------------------------------------+\n");
+        printf("|    games                                                 Launches the game selection menu                   |\n");
+        printf("|        |-> simulatorCat                                                                                     |\n");
+        printf("|        |-> doomLite                                                                                         |\n");
+        printf("|        |-> spaceDown                                                                                        |\n");
+        printf("|        |-> myFlappyBird                                                                                     |\n");
         printf("+-------------------------------------------------------------------------------------------------------------+\n");
         resetColor();
     } else if (strcmp(command, "datetime") == 0) {
@@ -223,6 +239,40 @@ void RunCommand(char *command, char *currentDir) {
         printf("Current user: %s\n", username);
     } else if (strcmp(command, "pwd") == 0) {
         printf("Current directory: %s\n", currentDir);
+    } else if (strcmp(command, "games") == 0) {
+        printf("|>_Menu_games_<|\n");
+        
+        char *choices[] = {
+            "simulatorCat",
+            "doomLite",
+            "spaceDown",
+            "myFlappyBird"
+        };
+        int n_choices = sizeof(choices) / sizeof(char *);
+
+        init_menu();
+        char *selected_choice = show_menu(choices, n_choices);
+        printf("You chose: %s\n", selected_choice);
+        if (strcmp(selected_choice, "simulatorCat") == 0) {
+            system("cls");
+            Cat cat = {100, 100, 100, 100, 100, 100, 0, ""};
+            birth(&cat);
+            live(&cat);
+        } else if (strcmp(selected_choice, "doomLite") == 0) {
+            setupDoom();
+
+            while (1) {
+                if (updateDoom() == 27) break;
+                renderDoom();
+            }
+        } else if (strcmp(selected_choice, "spaceDown") == 0) {
+            system("cls");
+            runSpaceDown();
+        } else if (strcmp(selected_choice, "myFlappyBird") == 0) {
+            system("cls");
+            runMyFlappyBird();
+        }
+        free(selected_choice); // Освобождаем память, выделенную strdup
     } else {
         printError2("Unknown command: %s", command);
     }
@@ -230,6 +280,8 @@ void RunCommand(char *command, char *currentDir) {
 
 int main() {
     setlocale(LC_ALL, "en_US.UTF-8"); // Устанавливаем локаль для работы с UTF-8
+
+    srand(time(NULL));
 
     enableAnsiSupport();
 

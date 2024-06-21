@@ -1,6 +1,7 @@
 // stringFunc.c
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 
 // Function to convert a string to lowercase
@@ -28,4 +29,3 @@ char charToLower(char c) {
 char charToUpper(char c) {
     return toupper(c);
 }
-
