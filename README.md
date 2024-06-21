@@ -1,8 +1,8 @@
 # Amina
 
-Amina — виртуальная операционная система (ОС), написанная на Python.
+Amina — эмулятор операционной системы, написанныя на Python и в последствии переписанный на чистый Си
 
-![](Images/image.png)
+![image](https://github.com/tailogs/Amina/assets/69743960/28454e75-804a-4de1-8891-28efaa1df5bc)
 
 ---
 
@@ -12,40 +12,25 @@ Amina — виртуальная операционная система (ОС),
 git clone https://github.com/tailogs/Amina.git
 ```
 
+Собрать проект с помощью команды
+
+```sh
+make
+```
+
+или
+
+```sh
+make run
+```
+
+Очистить проект можно командой
+
+```sh
+make clean
+```
 ---
 
-После этого создайте venv внутри установленного каталога и активируйте ее соответствующими командами:
+Бинарная (exe) версия не требующая компиляции и запускаемая одним кликом есть в релизах проекта
 
-```python
-python -m venv venv
-```
-
-Для Windows:
-
-```python
-venv\Scripts\activate.bat
-```
-
-Для Linux и MacOS:
-
-```python
-source venv/bin/activate
-```
-
----
-
-Откройте консоль, перейдите в каталог программы и введите следующую команду для установки всех модулей:
-
-```python
-pip install -r requirements.txt
-```
-
----
-
-Теперь вы можете запустить программу командой:
-
-```python
-python main.py
-```
-
-Или, если вы используете Windows, дважды щелкните файл active.bat.
+https://github.com/tailogs/Amina/releases
