@@ -1,56 +1,55 @@
 # Amina
 
-Amina — эмулятор операционной системы, написанныя на Python и в последствии переписанный на чистый Си
+Amina is an operating system emulator initially written in Python and later rewritten in pure C.
 
-![image](https://github.com/tailogs/Amina/assets/69743960/797055de-8027-4f4d-ac5f-3f9e0eff00f0)
+![Amina](https://github.com/tailogs/Amina/assets/69743960/797055de-8027-4f4d-ac5f-3f9e0eff00f0)
 
-## Игры:
+## Games:
 
 ### doomLite:
-![image](https://github.com/tailogs/Amina/assets/69743960/5043d6e2-1510-4dfe-8159-2f481350d8a8)
+![doomLite](https://github.com/tailogs/Amina/assets/69743960/5043d6e2-1510-4dfe-8159-2f481350d8a8)
 
 ### spaceDown:
-![image](https://github.com/tailogs/Amina/assets/69743960/59ece6de-8d2c-4398-aeed-ec3f0387f924)
+![spaceDown](https://github.com/tailogs/Amina/assets/69743960/59ece6de-8d2c-4398-aeed-ec3f0387f924)
 
-### myFlappyBird
-![image](https://github.com/tailogs/Amina/assets/69743960/882a0fe6-6eb2-415b-953a-1476c57efc03)
+### myFlappyBird:
+![myFlappyBird](https://github.com/tailogs/Amina/assets/69743960/882a0fe6-6eb2-415b-953a-1476c57efc03)
 
-## Программы:
+## Programs:
 
 ### Nano:
-
-![image](https://github.com/tailogs/Amina/assets/69743960/03234d24-8329-4b34-b5f0-8e31045a9778)
-
+![Nano](https://github.com/tailogs/Amina/assets/69743960/03234d24-8329-4b34-b5f0-8e31045a9778)
 
 ---
 
-## Установка
+## Installation
 
-Чтобы установить эту программу, вам необходимо скопировать этот репозиторий в выбранную вами директорию с помощью команды:
+To install this program, you need to clone this repository into your desired directory using the command:
 
 ```git
 git clone https://github.com/tailogs/Amina.git
 ```
 
-Собрать проект с помощью команды
+Build the project with:
 
 ```sh
 make
 ```
 
-или
+or
 
 ```sh
 make run
 ```
 
-Очистить проект можно командой
+To clean the project, use:
 
 ```sh
 make clean
 ```
+
 ---
 
-Бинарная (exe) версия не требующая компиляции и запускаемая одним кликом есть в релизах проекта
+A pre-compiled binary (exe) version that does not require compilation and runs with a single click is available in the project's releases:
 
 https://github.com/tailogs/Amina/releases
